@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NDC visit of Oct 2024</title>
+  <script>
+    var startTime;
+    var timerInterval;
+    
+    function startTimer() {
+      startTime = new Date().getTime();
+      timerInterval = setInterval(updateTimer, 1000);
+    }
+    
+    function stopTimer() {
+      clearInterval(timerInterval);
+    }
+    
+    function updateTimer() {
+      var currentTime = new Date().getTime();
+      var elapsedTime = currentTime - startTime;
+      
+      var minutes = Math.floor(elapsedTime / 60000);
+      var seconds = Math.floor((elapsedTime % 60000) / 1000);
+      
+      document.getElementById("timer").innerHTML = "Time used: " + minutes + " minutes " + seconds + " seconds";
+    }
+    
+    function calculateSum() {
+      var dropdown1 = parseInt(document.getElementById("dropdown1").value);
+      var dropdown2 = parseInt(document.getElementById("dropdown2").value);
+      var dropdown3 = parseInt(document.getElementById("dropdown3").value);
+      var dropdown4 = parseInt(document.getElementById("dropdown4").value);
+      
+      var sum = (dropdown1 + dropdown2)*13/5 - dropdown3 + dropdown4;
+      
+      document.getElementById("result").innerHTML = "Sum: " + sum;
+    }
+  </script>
+</head>
+<body>
+  <h1>A Day In The Life Of CST Digital Tester</h1>
+  <br><br>
+  
+  <label id="test">Fomular is (Number_1 + Number_2) * 13 / 5 + Number_4 - Number_3</label>
+  <br><br>
+  <button onclick="startTimer();">Start</button>
+  <br>
+  <label for="dropdown1">Number 1:</label>
+  <select id="dropdown1">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+  </select>
+  
+  <br><br>
+  
+  <label for="dropdown2">Number 2:</label>
+  <select id="dropdown2">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+  </select>
+  
+  <br><br>
+  
+  <label for="dropdown3">Number 3:</label>
+  <select id="dropdown3">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+  </select>
+  
+  <br><br>
+  
+  <label for="dropdown4">Number 4:</label>
+  <select id="dropdown4">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+  </select>
+  
+  <br><br>
+  
+  <button onclick="calculateSum();">Calculate</button><br>
+  <button onclick="stopTimer();">Stop</button>
+  
+  
+  <br><br>
+  
+  <label id="result"></label>
+  
+  <br>
+  
+  <label id="timer"></label>
+</body>
+</html>
